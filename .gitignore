@@ -1,0 +1,16 @@
+.cloud/
+.storage/
+certs/
+deps/
+tts/
+
+*.db
+*.log
+*.sqlite
+*.txt
+*.xml
+
+.HA_VERSION
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
