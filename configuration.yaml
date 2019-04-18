@@ -1,0 +1,33 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: imperial
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+
+default_config:
+
+http:
+  base_url: !secret base_url
+  server_port: !secret server_port
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+
+discovery:
+  ignore:
+    - plex_mediaserver
+
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret network_key
+  device_config:
+    light.living_room:
+      refresh_value: true
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
