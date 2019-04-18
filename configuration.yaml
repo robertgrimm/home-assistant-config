@@ -7,7 +7,19 @@ homeassistant:
   time_zone: !secret time_zone
   customize: !include customize.yaml
 
-default_config:
+# 'default_config:' stuff minus a few things
+automation:
+config:
+frontend:
+history:
+logbook:
+map:
+mobile_app:
+person:
+script:
+sun:
+system_health:
+updater:
 
 http:
   base_url: !secret base_url
@@ -20,6 +32,9 @@ http:
 discovery:
   ignore:
     - plex_mediaserver
+
+lovelace:
+  mode: yaml
 
 zwave:
   usb_path: /dev/ttyACM0

@@ -11,6 +11,7 @@ tts/
 *.xml
 
 .HA_VERSION
+.uuid
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
