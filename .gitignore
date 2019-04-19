@@ -11,6 +11,7 @@ tts/
 *.xml
 
 .HA_VERSION
+.ring_cache.pickle
 .uuid
 ip_bans.yaml
 secrets.yaml

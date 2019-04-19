@@ -8,7 +8,6 @@ homeassistant:
   customize: !include customize.yaml
 
 # 'default_config:' stuff minus a few things
-automation:
 config:
 frontend:
 history:
@@ -16,10 +15,22 @@ logbook:
 map:
 mobile_app:
 person:
-script:
 sun:
 system_health:
 updater:
+
+binary_sensor:
+  - platform: ring
+    monitored_conditions:
+      - ding
+      - motion
+
+camera:
+  - platform: ring
+
+discovery:
+  ignore:
+    - plex_mediaserver
 
 http:
   base_url: !secret base_url
@@ -29,16 +40,19 @@ http:
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
 
-discovery:
-  ignore:
-    - plex_mediaserver
-
 lovelace:
   mode: yaml
 
+ring:
+  username: !secret ring_username
+  password: !secret ring_password
+
+sensor:
+  - platform: ring
+
 zwave:
   usb_path: /dev/ttyACM0
-  network_key: !secret network_key
+  network_key: !secret zwave_network_key
   device_config:
     light.living_room:
       refresh_value: true
