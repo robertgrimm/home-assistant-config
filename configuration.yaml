@@ -19,6 +19,16 @@ sun:
 system_health:
 updater:
 
+alexa:
+  smart_home:
+    filter:
+      include_entities:
+        - light.living_room
+    entity_config:
+      light.living_room:
+        name: Living Room Light
+        description: The light in the living room
+
 binary_sensor:
   - platform: ring
     monitored_conditions:
