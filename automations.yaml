@@ -1,1 +1,23 @@
-[]
+- alias: Turn on exterior lights when front door motion is detected after sunset
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ring_front_door_motion
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+    - service: switch.turn_on
+      entity_id: group.exterior_lights
+
+- alias: Turn off exterior lights 30 seconds after last front door motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ring_front_door_motion
+      to: 'off'
+      for:
+        seconds: 30
+  action:
+    - service: switch.turn_off
+      entity_id: group.exterior_lights

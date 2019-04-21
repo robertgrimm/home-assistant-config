@@ -6,11 +6,14 @@ views:
     cards:
       - type: entities
         title: Living Room
+        show_header_toggle: false
         entities:
           - light.living_room
 
-      - type: picture-glance
-        title: Front Door
+      - type: entities
+        title: Exterior
+        show_header_toggle: false
         entities:
+          - camera.front_door
           - sensor.ring_front_door_last_activity
-        camera_image: camera.front_door
+          - switch.front_porch
