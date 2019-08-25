@@ -35,9 +35,6 @@ binary_sensor:
       - ding
       - motion
 
-camera:
-  - platform: ring
-
 discovery:
   ignore:
     - plex_mediaserver
