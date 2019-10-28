@@ -7,6 +7,11 @@
     - condition: state
       entity_id: sun.sun
       state: 'below_horizon'
+    - condition: state
+      entity_id: group.exterior_lights
+      state: 'off'
+      for:
+        seconds: 10
   action:
     - service: switch.turn_on
       entity_id: group.exterior_lights
@@ -17,7 +22,7 @@
       entity_id: binary_sensor.ring_front_door_motion
       to: 'off'
       for:
-        seconds: 30
+        minutes: 2
   action:
     - service: switch.turn_off
       entity_id: group.exterior_lights
