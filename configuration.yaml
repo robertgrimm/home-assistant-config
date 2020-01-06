@@ -19,6 +19,9 @@ sun:
 system_health:
 updater:
 
+logger:
+  default: info
+
 alexa:
   smart_home:
     filter:
