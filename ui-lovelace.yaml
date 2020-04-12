@@ -14,5 +14,5 @@ views:
         title: Exterior
         show_header_toggle: false
         entities:
-          - sensor.ring_front_door_last_activity
+          - sensor.front_door_last_activity
           - switch.front_porch
