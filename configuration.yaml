@@ -38,10 +38,6 @@ binary_sensor:
       - ding
       - motion
 
-discovery:
-  ignore:
-    - plex_mediaserver
-
 http:
   base_url: !secret base_url
   server_port: !secret server_port
