@@ -27,10 +27,14 @@ alexa:
     filter:
       include_entities:
         - light.living_room
+        - switch.front_porch
     entity_config:
       light.living_room:
         name: Living Room Light
         description: The light in the living room
+      switch.front_porch:
+        name: Front Portch Light
+        description: The front porch light
 
 http:
   base_url: !secret base_url
